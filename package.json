@@ -1,0 +1,46 @@
+{
+  "name": "wakeful",
+  "version": "1.0.0",
+  "description": "Async timer/sentry asserting predicate at intervals and stops/rejects with an errMsg if predicate returns false otherwise resolves with okMsg after timeMs.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "ci": "jest --ci --testResultsProcessor='./node_modules/jest-junit-reporter'"
+  },
+  "keywords": [
+    "wakeful",
+    "sentry",
+    "sleep",
+    "async",
+    "infinite",
+    "promise",
+    "countdown",
+    "predicate",
+    "interval",
+    "timer",
+    "timeout",
+    "node",
+    "browser",
+    "tested"
+  ],
+  "author": "stormcrows",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stormcrows/wakeful.git"
+  },
+  "bugs": {
+    "url": "https://github.com/stormcrows/wakeful/issues"
+  },
+  "homepage": "https://github.com/stormcrows/wakeful#readme",
+  "maintainers": [
+    {
+      "name": "stormcrows",
+      "email": "stormingcrows@gmail.com"
+    }
+  ],
+  "devDependencies": {
+    "jest": "^21.2.1",
+    "jest-junit-reporter": "^1.1.0"
+  }
+}
