@@ -1,15 +1,25 @@
 const wakeful = require("./index");
 
 let serviceRunning = true;
-const stopService = () => (serviceRunning = false);
+// we'll change the state of the service after 6s
+wakeful(6000).then(() => (serviceRunning = false));
 
-wakeful(10000).then(stopService);
-
-wakeful(Infinity, {
-  predicate: () => serviceRunning,
-  okMsg: "sleptWell!",
-  errMsg: "interruption!",
-  interval: 1000
-})
-  .then(ok => process.stdout.write(ok))
-  .catch(err => process.stderr.write(err));
+// the idea here is to stop the timeout gracefully without exceptions,
+// and exit the loop of the program while it's in "sleep" mode
+(async () => {
+    const errMsg = "interruption!"; // custom err message
+    const predicate = () => serviceRunning; // all's good until false
+    const interval = 1250; // default is 1000ms
+    try {
+        do {
+            process.stdout.write("doing stuff...");
+            await wakeful(2500, { predicate, errMsg, interval });
+        } while (true);
+    } catch (err) {
+        if (err === errMsg) {
+            process.stdout.write("program terminated gracefully!");
+        } else {
+            process.stdout.write(err.stack);
+        }
+    }
+})();
