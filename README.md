@@ -2,10 +2,12 @@
 
 [![CircleCI](https://circleci.com/gh/stormcrows/wakeful/tree/master.svg?style=svg)](https://circleci.com/gh/stormcrows/wakeful/tree/master)
 
-Async timer/sentry asserting predicate at intervals and stops/rejects with an errMsg if predicate returns false otherwise resolves with okMsg after timeMs.
+Async sentry that allows a clean breakout from long await when program's state changes.
 
 It was built for a service that slept long times between activities
 and needed to be interrupted gracefully.
+
+What it does: Async timer/sentry asserting predicate at intervals and stops/rejects with an errMsg if predicate returns false otherwise resolves with okMsg after timeMs.
 
 ### arguments
 
