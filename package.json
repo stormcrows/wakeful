@@ -1,14 +1,12 @@
 {
   "name": "wakeful",
-  "version": "1.0.2",
-  "description":
-    "Async sentry that allows a clean breakout from long await when program's state changes.",
+  "version": "1.0.3",
+  "description": "Async sentry that allows a clean breakout from long await when program's state changes.",
   "main": "index.js",
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
-    "ci":
-      "jest --ci --testResultsProcessor='./node_modules/jest-junit-reporter'"
+    "ci": "jest --ci --testResultsProcessor='./node_modules/jest-junit-reporter'"
   },
   "keywords": [
     "wakeful",
@@ -43,7 +41,7 @@
     }
   ],
   "devDependencies": {
-    "jest": "^21.2.1",
+    "jest": "^24.8.0",
     "jest-junit-reporter": "^1.1.0"
   }
 }
