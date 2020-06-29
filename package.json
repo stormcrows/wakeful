@@ -1,6 +1,6 @@
 {
   "name": "wakeful",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Async sentry that allows a clean breakout from long await when program's state changes.",
   "main": "index.js",
   "scripts": {
